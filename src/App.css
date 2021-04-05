@@ -2,23 +2,3 @@
   font-family: 'Optima';
   text-align: center;
 }
-.navBar{
-  background-color: #2e6954;
-}
-.nameBrand{
-  margin-top: 0%;
-  font-size: 250%;
-}
-.navBar ul li {
-  display: inline-flex;
-  padding: 15px;
-  margin: 5px;
-}
-.menulist{
-  color: black;
-  text-decoration: none;
-}
-.menulist:hover{
-  color:white;
-  text-decoration: none;
-}
