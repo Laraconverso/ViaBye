@@ -1,4 +1,7 @@
 .imagen{
-    margin-left: 50%;
-    margin-right: 50%;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 35%;
 }
