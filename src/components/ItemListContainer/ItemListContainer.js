@@ -3,7 +3,6 @@ import imagen from './Pic.png';
 import Image from 'react-bootstrap/Image'
 import Container from 'react-bootstrap/Container';
 import Jumbotron from 'react-bootstrap/Jumbotron';
-
 import "./ItemListContainer.css";
 
 function ItemListContainer({greeting}) {
@@ -18,5 +17,6 @@ function ItemListContainer({greeting}) {
       </Jumbotron>
     )
 }
+
 
 export default ItemListContainer;

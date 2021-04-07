@@ -1,0 +1,14 @@
+.Contador-container { 
+    display: flex;
+    margin-top: -5%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    height: 200px;
+}
+
+.Buttons-container { 
+    display: inline-flex;
+    justify-items: space-between;
+}
