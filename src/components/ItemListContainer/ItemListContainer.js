@@ -6,11 +6,11 @@ import Jumbotron from 'react-bootstrap/Jumbotron';
 
 import "./ItemListContainer.css";
 
-function ItemListContainer() {
+function ItemListContainer({greeting}) {
     return (    
         <Jumbotron fluid>
             <Container>
-            <h2 className="titulo">Compra y vende ropa vintage en un solo lugar.</h2>
+            <h3 className="titulo">{greeting}</h3>
             <div>
                 <Image className="imagen" src={imagen} rounded />
             </div>
