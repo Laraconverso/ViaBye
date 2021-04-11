@@ -6,12 +6,14 @@
     width: 45%;
 }
 
+.img{
+    width: 30px;
+    height: 420px;
+}
+
 .items{
     display: inline-flex;
     list-style: none;
     align-items: center;
-}
-
-li{
-   margin: 1%;
+    margin: 1%;
 }
