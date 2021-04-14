@@ -4,7 +4,7 @@ import Jumbotron from 'react-bootstrap/Jumbotron';
 import ItemList from '../ItemList/ItemList'
 import "./ItemListContainer.css";
 
-function ItemListContainer({products}) {
+function ItemListContainer() {
     return (    
         <Jumbotron fluid>
             <Container>

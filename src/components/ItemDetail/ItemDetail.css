@@ -1,0 +1,22 @@
+.detail{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-column-gap: 2rem;
+}
+.image{
+    grid-column-start: 1;
+    width: 50%;
+    align-items: center;
+    margin-left: 30%;
+    margin-top: 7%;
+}
+.info{
+    margin-top: 15%;
+    margin-right: 7%;
+    align-items: flex-start;
+    grid-column-start: 2;
+}
+.btns{
+  margin-top: 15%;
+}
+

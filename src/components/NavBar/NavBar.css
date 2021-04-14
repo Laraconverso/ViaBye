@@ -18,3 +18,13 @@ Collapse:hover{
     margin-top: 0%;
     font-size: 200%;
 }
+
+.Cart{
+    color: black;
+    text-decoration: none;
+    margin-top: 2%;
+}
+.Cart:hover{
+    color:white;
+    text-decoration: none;
+}

@@ -17,3 +17,12 @@
     align-items: center;
     margin: 1%;
 }
+.bntInf{
+    margin-top: -100;
+    font-style: none;
+}
+
+.bntInf:hover{
+    font-style: none;
+    color: grey;
+}
