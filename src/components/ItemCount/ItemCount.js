@@ -1,63 +1,55 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import './ItemCount.css';
 import Button from '@material-ui/core/Button';
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 
+function ItemCount(){
+  const [count, setCount] = useState(0)
 
-
-class ItemCount extends Component {
-    constructor() {
-      super();
-      this.state = {
-        count: 0,
-        stock: 15,
-        min:0,
-      };
+  const increment = () => {
+    if (count < 10) {
+      setCount(count + 1)
+    } else {
+      return
     }
+  };
 
-    handleIncrement = () => {
-      this.setState({ count: this.state.count + 1 });
-    };
-
-    handleDecrement = () => {
-        if(this.state.count === 0){
-            this.setState({ count:0 });
-          }else {
-            this.setState({ count: this.state.count - 1 });
-          }
-    };
-
-    addToCart = () => {
-      if(this.state.count <1){
-        alert(`No se agrega item por falta de cantidad.`);
-      } else{
-        console.log(
-          `Agregaste ${this.state.count} items a tu carrito` 
-        );
-      }
+  const decrement = () => {
+    if (count > 0) {
+      setCount(count - 1)
+    } else {
+      return
     }
-  
+  };
 
-    render() {
-      return (
-        <div className="Contador-container">
-          <div></div>
-            <p className='cantidad'>{this.state.count}</p>
-            <div className='Buttons-container'>
-            <Button className="less" variant="outlined" color="secondary"onClick={this.handleDecrement} size='small'>
-                -
-              </Button>
-              <Button  className="plus" variant="outlined" color="secondary" onClick={this.handleIncrement} size='small'>
-                +
-              </Button>
-            </div>
-            <div>
-              <Button className="add" variant="outlined" onClick={this.addToCart}> <AddShoppingCartIcon/> Agregar </Button> 
-            </div>
-        </div>
-
+  const addToCart = () => {
+    if(count <1){
+      alert(`No se agrega item por falta de cantidad.`);
+    } else{
+      console.log(
+        `Agregaste ${count} items a tu carrito` 
       );
     }
   }
+
+    return (
+      <div className="Contador-container">
+        <div></div>
+          <p className='cantidad'>{count}</p>
+          <div className='Buttons-container'>
+          <Button className="less" variant="outlined" color="secondary"onClick={decrement} size='small'>
+              -
+            </Button>
+            <Button  className="plus" variant="outlined" color="secondary" onClick={increment} size='small'>
+              +
+            </Button>
+          </div>
+          <div>
+            <Button className="add" variant="outlined" onClick={addToCart}> <AddShoppingCartIcon/> Agregar </Button> 
+          </div>
+      </div>
+
+    );
+}
 
 export default ItemCount;

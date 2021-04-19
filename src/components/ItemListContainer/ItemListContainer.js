@@ -1,21 +1,22 @@
-import React from 'react'
-import Container from 'react-bootstrap/Container';
-import Jumbotron from 'react-bootstrap/Jumbotron';
-import ItemList from '../ItemList/ItemList'
-import "./ItemListContainer.css";
+import React, { useState, useEffect } from 'react';
+import Item from '../Item/Items';
+import '../ItemList/ItemList'
+import singleProduct from '../SingleProduct/SingleProduct'
 
-function ItemListContainer() {
-    return (    
-        <Jumbotron fluid>
-            <Container>
-            <h2>Productos disponibles</h2>
-            <div>
-                <ItemList/>
+function ItemListContainer (){
+    const [product, setProduct] = useState([])
+
+    useEffect(() => {
+        setTimeout(() => {
+            setProduct(singleProduct)
+        }, 2000)
+    }, [])
+
+    return(
+            <div className="list">
+                <h2>Productos Disponibles</h2>
+                <Item products={product} key={product.id}/>
             </div>
-            </Container>
-      </Jumbotron>
-    )
+        )
 }
-
-
 export default ItemListContainer;

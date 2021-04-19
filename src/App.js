@@ -1,9 +1,12 @@
 import './App.css';
-import { Route ,BrowserRouter as Router, Switch} from 'react-router-dom'
-import NavBar from './components/NavBar/NavBar.js'
-import ItemListContainer from './components/ItemListContainer/ItemListContainer.js'
-import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer'
-import Footer from './components/Footer/Footer.js'
+import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import NavBar from './components/NavBar/NavBar.js';
+import Home from './components/Home/Home';
+import Sell from './components/Sell/Sell';
+import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+import ItemDetail from './components/ItemDetail/ItemDetail'
+import Cart from './components/Cart/Cart';
+import Footer from './components/Footer/Footer.js';
 
 
 function App() {
@@ -12,8 +15,12 @@ function App() {
       <div className="App">
         <NavBar/>
         <Switch>
-          <Route path="/ItemListContainer" exact component={ItemListContainer}/>
-          <Route path="/ItemDetailContainer" component={ItemDetailContainer} />
+          <Route path="/Home" exact component={Home}/>
+          <Route path="/Sell" exact component={Sell}/>
+          <Route path="/" exact component={ItemListContainer}/>
+          <Route path="/allItems/:id" exact component={ItemListContainer}/>
+          <Route path="/item/:id" exact component={ItemDetail}/>
+          <Route path="/Cart" exact component={Cart}/>
         </Switch>
         <Footer/>
       </div>

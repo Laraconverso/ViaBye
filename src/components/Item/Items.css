@@ -1,21 +1,18 @@
 .producto{
-    display: block;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
-    width: 45%;
+    margin-bottom:5%;
 }
 
 .img{
-    width: 30px;
-    height: 420px;
+    width: 30%;
 }
 
 .items{
-    display: inline-flex;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
     list-style: none;
-    align-items: center;
-    margin: 1%;
+    justify-content: space-between;
+    margin: 4%;
 }
 .bntInf{
     margin-top: -100;
