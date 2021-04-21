@@ -1,8 +1,11 @@
 import React from 'react'
 import Container from 'react-bootstrap/Container';
 import Jumbotron from 'react-bootstrap/Jumbotron';
-import ItemListContainer from '../ItemListContainer/ItemListContainer';
+import ItemListContainer from '../ItemListContainer/ItemsListContainer';
+//import { Link } from 'react-router-dom';
 import "./ItemList.css";
+import Item from '../Item/Items'
+
 
 
 function ItemList() {
@@ -10,7 +13,9 @@ function ItemList() {
         <Jumbotron fluid>
             <Container>
             <div>
-                <ItemListContainer/>
+                <ItemListContainer>
+                    <Item/>
+                </ItemListContainer>
             </div>
             </Container>
       </Jumbotron>

@@ -19,7 +19,7 @@ function App() {
           <Route path="/Sell" exact component={Sell}/>
           <Route path="/" exact component={ItemListContainer}/>
           <Route path="/allItems/:id" exact component={ItemListContainer}/>
-          <Route path="/item/:id" exact component={ItemDetail}/>
+          <Route path="/product/:id" exact component={ItemDetail}/>
           <Route path="/Cart" exact component={Cart}/>
         </Switch>
         <Footer/>

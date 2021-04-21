@@ -1,22 +1,32 @@
-import React, { useState, useEffect } from 'react';
+import React, { Component } from 'react';
 import Item from '../Item/Items';
-import '../ItemList/ItemList'
-import singleProduct from '../SingleProduct/SingleProduct'
+import { Data } from '../SingleProduct/SingleProduct';
 
-function ItemListContainer (){
-    const [product, setProduct] = useState([])
+class ItemListContainer  extends Component {
 
-    useEffect(() => {
+    constructor(){
+        super();
+        this.state = {
+            round:[],
+        };
+    }
+
+    componentDidMount(){
         setTimeout(() => {
-            setProduct(singleProduct)
-        }, 2000)
-    }, [])
+            this.setState({
+                round: Data,
+            });
+        }, 2000);
+    }
 
-    return(
-            <div className="list">
+    render (){
+        return(
+            <div >
                 <h2>Productos Disponibles</h2>
-                <Item products={product} key={product.id}/>
+                <Item data={this.state.round}/>
             </div>
-        )
+        );
+    }
+        
 }
 export default ItemListContainer;

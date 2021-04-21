@@ -1,22 +1,35 @@
 import React, {useEffect, useState} from 'react'; 
-import singleProduct from '../SingleProduct/SingleProduct';
 import ItemDetail from '../ItemDetail/ItemDetail'
-import Items from '../Item/Items';
+import {Data} from '../SingleProduct/SingleProduct'
 
-const ItemDetailContainer = producto => {
-    const [product, setProduct] = useState([Items.id])
 
-    useEffect(() => {
+function ItemDetailContainer (match){
+    const data = Data;
+    const [item, setItem] = useState({});
+    const [loading, setLoading] = useState(true);
+ 
+    const getProducts = new Promise((resolve, reject) => {
+        const prod = data.find((elem) => {
+          return elem.id === match.match.params.id;
+        });
         setTimeout(() => {
-            setProduct(singleProduct)
-        }, 2000)
-    }, [])
+          setItem(prod);
+          resolve({ item });
+        });
+      }, 2000);
 
-    return(
-            <div className="list">
-                <ItemDetail producto={product.id}/>
-            </div>
-        )
+      useEffect(() => {
+        getProducts.then((data) => {
+          setItem(data);
+          setLoading(false);
+        });
+        //eslint-disable-next-line
+      }, [loading]);
+
+      return(
+        <div className="list">
+        {!loading && <ItemDetail data={item} />}
+        </div>
+      )
 }
-
 export default ItemDetailContainer;
