@@ -17,21 +17,14 @@ const ItemCount = ({ onAdd }) =>{
   };
 
   const decrement = () => {
-    if (count > 0) {
+    if (count > 1) {
       setCount(count - 1)
-    } else {
-      return
     }
   };
 
   const addToCart = () => {
-    if (count > 0){
-      console.log("Se agregaron items a tu carrito")
-    }else{
-      alert("Operacion no posible")
-    }
-    
-  }
+    onAdd(count);
+  };
 
 
     return (
@@ -46,6 +39,7 @@ const ItemCount = ({ onAdd }) =>{
               +
             </Button>
           </div>
+          <br/>
           <div>
             <Button className="add" variant="outlined" onClick={addToCart}> <AddShoppingCartIcon/> Agregar </Button> 
           </div>

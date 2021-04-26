@@ -1,9 +1,9 @@
 import React, {  useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import './Items.css';
-import InfoIcon from '@material-ui/icons/Info';
+import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
 import Button from '@material-ui/core/Button';
-import ItemCount from '../ItemCount/ItemCount';
+//import ItemCount from '../ItemCount/ItemCount';
 import Card from 'react-bootstrap/Card';
 
 
@@ -29,8 +29,7 @@ export const Item = ({ item }) => {
               <Card.Body>
                   <Card.Title>{item.title}</Card.Title>
                   <Card.Title>${item.price}</Card.Title>
-                  <ItemCount/>
-                  <Link to={`/product/${item.id}`}><Button  className="bntInf"><InfoIcon/></Button></Link>
+                  <Link to={`/product/${item.id}`}><Button  className="bntInf"><AddCircleOutlineIcon/></Button></Link>
               </Card.Body>
           </Card>
         </div>
