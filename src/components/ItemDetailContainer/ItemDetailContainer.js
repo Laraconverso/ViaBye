@@ -1,22 +1,26 @@
 import React, {useEffect, useState} from 'react'; 
-import singleProduct from '../SingleProduct/SingleProduct';
+import productsPromise from '../SingleProduct/SingleProduct';
 import ItemDetail from '../ItemDetail/ItemDetail'
-import Items from '../Item/Items';
+import { useParams } from 'react-router';
 
-const ItemDetailContainer = producto => {
-    const [product, setProduct] = useState([Items.id])
+
+const ItemDetailContainer = () => {
+    const [item, setItem] = useState({});
+    const {id} = useParams();
+    console.log(id);
 
     useEffect(() => {
-        setTimeout(() => {
-            setProduct(singleProduct)
-        }, 2000)
-    }, [])
+        productsPromise.then((resp) => {
+            setItem(resp.find((li) => li.id === id));
+          });
+        }, );
+        console.log(item);
 
     return(
             <div className="list">
-                <ItemDetail producto={product.id}/>
+                <ItemDetail item={item}/>
             </div>
-        )
-}
+        );
+};
 
 export default ItemDetailContainer;

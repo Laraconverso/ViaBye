@@ -1,22 +1,32 @@
 import React, { useState, useEffect } from 'react';
-import Item from '../Item/Items';
-import '../ItemList/ItemList'
-import singleProduct from '../SingleProduct/SingleProduct'
+//import ItemCount from '../ItemCount/ItemCount';
+import { useParams } from "react-router-dom";
+import productsPromise from "../SingleProduct/SingleProduct";
+import {ItemList} from '../ItemList/ItemList';
+//import ItemDetailContainer from '../ItemDetailContainer/ItemDetailContainer';
 
-function ItemListContainer (){
+
+export default function ItemListContainer ({ProductosDisponibles}){
     const [product, setProduct] = useState([])
+    const { categoryId } = useParams();
 
     useEffect(() => {
-        setTimeout(() => {
-            setProduct(singleProduct)
-        }, 2000)
-    }, [])
+        productsPromise.then((res) => {
+      if (categoryId === undefined) {
+        setProduct(res);
+      } else {
+        setProduct(res.filter((res) => res.categoria === categoryId));
+      }
+    });
+  }, [categoryId]);
+  console.log(product);
 
     return(
             <div className="list">
-                <h2>Productos Disponibles</h2>
-                <Item products={product} key={product.id}/>
+                <h2>{ProductosDisponibles}</h2>
+                {product.length < 1 ? <h1>Cargando...</h1> : 
+                <div className='items'><ItemList items={product} /> </div>
+                 }
             </div>
-        )
+        );
 }
-export default ItemListContainer;

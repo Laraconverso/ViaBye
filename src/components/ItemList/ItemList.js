@@ -1,21 +1,17 @@
-import React from 'react'
-import Container from 'react-bootstrap/Container';
-import Jumbotron from 'react-bootstrap/Jumbotron';
-import ItemListContainer from '../ItemListContainer/ItemListContainer';
-import "./ItemList.css";
+import React from "react";
+import { Item } from "../Item/Items";
+
+export const ItemList = ({ items }) => {
+  console.log(items);
+
+  return (
+    <>
+      {items.map((item) => (
+        <Item key={item.id} item={item} />
+      ))}
+    </>
+  );
+};
 
 
-function ItemList() {
-    return (    
-        <Jumbotron fluid>
-            <Container>
-            <div>
-                <ItemListContainer/>
-            </div>
-            </Container>
-      </Jumbotron>
-    )
-}
 
-
-export default ItemList;

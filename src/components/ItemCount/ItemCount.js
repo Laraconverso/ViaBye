@@ -3,8 +3,10 @@ import './ItemCount.css';
 import Button from '@material-ui/core/Button';
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 
-function ItemCount(){
-  const [count, setCount] = useState(0)
+const ItemCount = ({ onAdd }) =>{
+
+  console.log(onAdd);
+  const [count, setCount] = useState(1);
 
   const increment = () => {
     if (count < 10) {
@@ -23,14 +25,14 @@ function ItemCount(){
   };
 
   const addToCart = () => {
-    if(count <1){
-      alert(`No se agrega item por falta de cantidad.`);
-    } else{
-      console.log(
-        `Agregaste ${count} items a tu carrito` 
-      );
+    if (count > 0){
+      console.log("Se agregaron items a tu carrito")
+    }else{
+      alert("Operacion no posible")
     }
+    
   }
+
 
     return (
       <div className="Contador-container">

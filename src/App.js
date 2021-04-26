@@ -4,7 +4,7 @@ import NavBar from './components/NavBar/NavBar.js';
 import Home from './components/Home/Home';
 import Sell from './components/Sell/Sell';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
-import ItemDetail from './components/ItemDetail/ItemDetail'
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer'
 import Cart from './components/Cart/Cart';
 import Footer from './components/Footer/Footer.js';
 
@@ -17,9 +17,11 @@ function App() {
         <Switch>
           <Route path="/Home" exact component={Home}/>
           <Route path="/Sell" exact component={Sell}/>
-          <Route path="/" exact component={ItemListContainer}/>
-          <Route path="/allItems/:id" exact component={ItemListContainer}/>
-          <Route path="/item/:id" exact component={ItemDetail}/>
+          <Route exact path="/">
+              <ItemListContainer geeating={"Productos Disponibles"} />
+          </Route>
+          <Route path="/product/:id" exact component={ItemDetailContainer} />
+          <Route path="/category/:categoryId" exact component={ItemListContainer}/>
           <Route path="/Cart" exact component={Cart}/>
         </Switch>
         <Footer/>

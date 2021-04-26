@@ -1,11 +1,9 @@
-.producto{
-    margin-bottom:5%;
-}
-
 .img{
     width: 30%;
 }
-
+.card{
+    margin-bottom: 5%;
+}
 .items{
     display: flex;
     flex-wrap: wrap;
