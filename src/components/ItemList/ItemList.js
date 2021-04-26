@@ -1,5 +1,7 @@
+
 import React from "react";
 import { Item } from "../Item/Items";
+
 
 export const ItemList = ({ items }) => {
   console.log(items);
@@ -12,6 +14,5 @@ export const ItemList = ({ items }) => {
     </>
   );
 };
-
 
 

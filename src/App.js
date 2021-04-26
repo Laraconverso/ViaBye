@@ -18,7 +18,7 @@ function App() {
           <Route path="/Home" exact component={Home}/>
           <Route path="/Sell" exact component={Sell}/>
           <Route exact path="/">
-              <ItemListContainer geeating={"Productos Disponibles"} />
+              <ItemListContainer ProductosDisponibles={"Productos Disponibles"} />
           </Route>
           <Route path="/product/:id" exact component={ItemDetailContainer} />
           <Route path="/category/:categoryId" exact component={ItemListContainer}/>

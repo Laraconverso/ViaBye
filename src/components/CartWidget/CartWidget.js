@@ -4,7 +4,7 @@ import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 
 function CartWidget(){
     return(
-        <div>
+        <div className="cart-icon" onClick={() => console.log('CartRoute')}>
             <ShoppingCartIcon></ShoppingCartIcon>
         </div>
     );

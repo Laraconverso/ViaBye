@@ -18,7 +18,7 @@ function NavBar (){
                 <NavDropdown title="Comprar" id="collasible-nav-dropdown" >
                     <NavDropdown.Item><Link to='/category/ropa' className='dropd'>Ropa</Link></NavDropdown.Item>
                     <NavDropdown.Item><Link to='/category/calzado' className='dropd'>Calzado</Link></NavDropdown.Item>
-                    <NavDropdown.Item><Link to='/category/acceorios' className='dropd'>Accesorios</Link></NavDropdown.Item>
+                    <NavDropdown.Item><Link to='/category/acce' className='dropd'>Accesorios</Link></NavDropdown.Item>
                     <NavDropdown.Item><Link to='/' className='dropd'>Ver Todo</Link></NavDropdown.Item>
                 </NavDropdown>
                 <Link to="/Cart" className='Cart'><CartWidget/></Link>
