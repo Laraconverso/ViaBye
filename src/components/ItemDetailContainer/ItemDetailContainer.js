@@ -1,24 +1,26 @@
 import React, {useEffect, useState} from 'react'; 
-import productsPromise from '../SingleProduct/SingleProduct';
+//import productsPromise from '../SingleProduct/SingleProduct';
 import ItemDetail from '../ItemDetail/ItemDetail'
 import { useParams } from 'react-router';
+import {db} from '../Firebase/Firebase'
 
 
 const ItemDetailContainer = () => {
-    const [item, setItem] = useState({});
+    const [productId, setProductId] = useState();
     const {id} = useParams();
-    console.log(id);
 
-    useEffect(() => {
-        productsPromise.then((resp) => {
-            setItem(resp.find((li) => li.id === id));
-          });
-        }, );
-        console.log(item);
+    useEffect(() =>{
+      const getData = async () => {
+        const { docs } = await db.collection("singleProducts").get();
+        const data = docs.map((item) => ({ id: item.id, ...item.data() }));
+        setProductId(data);
+      };
+      getData();
+    }, [id]);
 
     return(
-            <div className="list">
-                <ItemDetail item={item}/>
+            <div>
+              { productId ? <ItemDetail product={productId}/>  : 'Cargando...'}
             </div>
         );
 };

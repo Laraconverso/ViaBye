@@ -1,6 +1,7 @@
 .Contador-container { 
     display: flex;
     margin-top: -20%;
+    margin-bottom: -10%;
     flex-direction: column;
     justify-content: center;
     align-items: center;

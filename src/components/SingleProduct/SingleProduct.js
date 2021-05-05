@@ -1,7 +1,7 @@
 const singleProducts = [
    {   
        id:"1", 
-       categoria: "ropa",
+       categoria: "tops",
        title: "Remera",
        price: 1000,
        imgURL:'https://images.unsplash.com/photo-1583744946564-b52ac1c389c8?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80', 
@@ -9,7 +9,7 @@ const singleProducts = [
    },
    { 
        id:"2", 
-       categoria: "ropa",
+       categoria: "abrigos",
        title: "Campera", 
        price: 4500, 
        imgURL:'https://images.unsplash.com/photo-1616360706118-9468e6616211?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=642&q=80', 
@@ -17,7 +17,7 @@ const singleProducts = [
    },
    {
        id:"3" , 
-       categoria: "ropa",
+       categoria: "bottom",
        title: "Pantalon", 
        price: 1900, 
        imgURL:'https://images.unsplash.com/photo-1614251056216-f748f76cd228?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80', 
@@ -59,7 +59,7 @@ const singleProducts = [
         itemDetail:'Pantalon beige gabardina'
     },
     {   id:"9" ,
-        categoria: "acce",
+        categoria: "mochila",
         title: "Mochila",
         price:"4200",
         imgURL:'https://images.unsplash.com/photo-1547949003-9792a18a2601?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',

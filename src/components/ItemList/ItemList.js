@@ -1,17 +1,15 @@
-
 import React from "react";
 import { Item } from "../Item/Items";
+//import {db} from '../Firebase/Firebase'
+import '../ItemListContainer/ItemListContainer.css'
 
 
-export const ItemList = ({ items }) => {
-  console.log(items);
-
+export const ItemList = ({product}) => {
+  
   return (
-    <>
-      {items.map((item) => (
-        <Item key={item.id} item={item} />
-      ))}
-    </>
+    <div divclassName='list'>
+      <Item product={product} />
+    </div>
   );
 };
 

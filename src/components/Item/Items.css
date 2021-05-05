@@ -2,7 +2,7 @@
     width: 30%;
 }
 .card{
-    margin-bottom: 5%;
+    margin: 5%;
 }
 .items{
     display: flex;
@@ -21,3 +21,4 @@
     font-style: none;
     color: grey;
 }
+

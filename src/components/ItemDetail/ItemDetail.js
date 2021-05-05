@@ -4,32 +4,41 @@ import {Link} from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 import ItemCount from '../ItemCount/ItemCount';
 import './ItemDetail.css'
+import useCartContext from '../Context/CartContext';
+import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 
-const ItemDetail = ({item}) => {
-    const [inCart, setInCart] = useState(false);
+const ItemDetail = ({product}) => {
+    const{handleCartItems} = useCartContext();
+    const [cantidad, setQuantity] = useState(1);
 
-    const addToCart = (count) =>{
-        console.log("Usted agrego" , count);
-        setInCart(true);
-    };
+    const CantidadItems = (value) => {
+        setQuantity(value);
+    }
+
+    const addToCart = () => {
+        handleCartItems({id: product.id, title: product.title, price: product.price}, cantidad);
+
+    }
 
     return(
-        <>
             <div className='detail'>
-                <img src={item.imgURL} alt='imagen del producto' className='image'/>
+                <img src={product.imgURL} alt='imagen del producto' className='image'/>
                 <div className='info'>
-                    <h2>{item.title}</h2>
-                    <h5>${item.price}</h5>
-                    <h6>{item.itemDetail}</h6>
+                    <h2>{product.title}</h2>
+                    <h5>${product.price}</h5>
+                    <h6>{product.itemDetail}</h6>
                     <div className='btns'>
-                        {inCart ? <Link to='/Cart'><Button variant="outlined" >Terminar Compra</Button></Link>  : <ItemCount onAdd={addToCart} /> }
+                        <ItemCount onAdd={CantidadItems}/> 
+                        <Button className="add" variant="outlined" onClick={addToCart}> <AddShoppingCartIcon/> Agregar </Button>
                         <br/>
                         <br/>
-                        <Link to="/"><Button variant="outlined">Volver</Button></Link>
+                        <Link to="/cart" ><Button variant="outlined">Terminar Compra</Button></Link>
+                        <br/>
+                        <br/>
+                        <Link to="/" ><Button variant="outlined">Seguir Comprando</Button></Link>
                     </div>
                 </div>
             </div>
-        </>
-    );  
+        );  
 };
 export default ItemDetail;

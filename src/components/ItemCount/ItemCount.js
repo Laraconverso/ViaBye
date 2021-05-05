@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
 import './ItemCount.css';
 import Button from '@material-ui/core/Button';
-import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
+
 
 const ItemCount = ({ onAdd }) =>{
-
-  console.log(onAdd);
   const [count, setCount] = useState(1);
 
   const increment = () => {
@@ -22,11 +20,6 @@ const ItemCount = ({ onAdd }) =>{
     }
   };
 
-  const addToCart = () => {
-    onAdd(count);
-  };
-
-
     return (
       <div className="Contador-container">
         <div></div>
@@ -40,9 +33,6 @@ const ItemCount = ({ onAdd }) =>{
             </Button>
           </div>
           <br/>
-          <div>
-            <Button className="add" variant="outlined" onClick={addToCart}> <AddShoppingCartIcon/> Agregar </Button> 
-          </div>
       </div>
 
     );
